@@ -8,5 +8,5 @@ export default defineConfig({
   esbuild: {
     drop: ['console', 'debugger'],
   },
-  base: '/crypto-trading-app/',
+  base: '/crypto-trading-app',
 })
