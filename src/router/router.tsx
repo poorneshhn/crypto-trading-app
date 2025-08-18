@@ -22,7 +22,7 @@ export const routes = createHashRouter([
     element: <AppProvider />,
     children: [
       {
-        element: <BaseLayout/>,
+        element: <BaseLayout />,
         children: [
           {
             path: ROUTES.HOME,
