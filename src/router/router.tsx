@@ -1,4 +1,4 @@
-import { createBrowserRouter, Navigate } from "react-router-dom";
+import { Navigate, createHashRouter } from "react-router-dom";
 import { AppProvider } from "../providers/AppProvider";
 import { ROUTES } from "../constants/routes";
 import { BaseLayout } from "../layouts/BaseLayout/BaseLayout";
@@ -17,7 +17,7 @@ const NotFound = lazy(() =>
   import("../pages/Error").then((module) => ({ default: module.NotFound }))
 );
 
-export const routes = createBrowserRouter([
+export const routes = createHashRouter([
   {
     element: <AppProvider />,
     children: [
