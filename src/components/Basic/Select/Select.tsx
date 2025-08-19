@@ -70,7 +70,8 @@ export const Select = function Select({
 
         <span
           className={clsx(
-            "pointer-events-none absolute inset-y-0 right-3 top-3 flex items-center",
+            "pointer-events-none absolute inset-y-0 right-3 flex items-center",
+            { "top-0": size === "sm", "top-5": size === "md"},
             "text-gray-500 dark:text-white"
           )}
           aria-hidden="true"

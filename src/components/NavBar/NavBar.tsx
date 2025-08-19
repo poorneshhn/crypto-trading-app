@@ -9,7 +9,6 @@ import { Account } from "./Account";
 const NavBar: FC = () => {
   const location = useLocation();
 
-
   return (
     <nav className="bg-gray-800 p-4 text-white flex justify-between">
       <ul className="flex space-x-4">
