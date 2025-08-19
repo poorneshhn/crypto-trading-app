@@ -9,7 +9,6 @@ export default defineConfig({
   esbuild: {
     drop: ['console', 'debugger'],
   },
-  base: '/crypto-trading-app/',
   resolve: {
     alias: {
       '@': path.resolve(__dirname, 'src'),
