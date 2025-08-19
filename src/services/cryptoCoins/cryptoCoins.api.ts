@@ -13,4 +13,12 @@ export const CryptoCoinsApi = {
     return data;
   },
 
+  getAllCryptoCoins: async () => {
+    const { data } = await axiosInstance.get<ICoin[]>("/", {
+      params: {
+        vs_currency: 'usd',
+      },
+    });
+    return data;
+  },
 };

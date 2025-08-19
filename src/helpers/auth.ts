@@ -9,7 +9,7 @@ export const createToken = async ({email, password}: IUser) => {
   const token = await new SignJWT({email, password})
     .setProtectedHeader({ alg: "HS256" })
     .setIssuedAt()
-    .setExpirationTime("20s")
+    .setExpirationTime("15m")
     .sign(secret);
 
   return token;
@@ -21,8 +21,8 @@ export const verifyToken = async (token: string | null) => {
     const secret = new TextEncoder().encode(getVariable("VITE_ENV_SECRET"));
     const { payload } = await jwtVerify(token, secret);
     return payload;
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   } catch (error) {
-    console.error("Token verification failed:", error);
     return null;
   }
 }

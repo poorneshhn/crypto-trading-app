@@ -1,21 +1,22 @@
+
 export type SelectOption<T extends string | number = string> = {
   label: string;
   value: T;
   disabled?: boolean;
 };
 
-export type Size = "sm" | "md" | "lg";
+export type Size = "sm" | "md";
 
-export interface SelectProps<T extends string | number = string>
+export type option = Record<string, string | number | boolean>;
+export interface ISelectProps
   extends Omit<React.SelectHTMLAttributes<HTMLSelectElement>, "onChange" | "size"> {
   label?: string;
-  options: Array<SelectOption<T>>;
-  value?: T;
-  defaultValue?: T;
-  onChange?: (value: T) => void;
+  options: option[];
+  reduce: (val: option) => option,
+  value?: string | number;
+  defaultValue?: string;
+  onChange?: (value: string) => void;
   placeholder?: string;
-  helperText?: string;
-  error?: string | boolean;
   size?: Size;
   fullWidth?: boolean;
   className?: string;

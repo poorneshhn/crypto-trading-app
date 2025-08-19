@@ -3,12 +3,14 @@ export const COINS_TABLE_BUY_SELL_OPTIONS = [
     label: "Buy or Sell",
     value: "buy_sell",
     disabled: true
-    }, 
-    {
+}, 
+{
     label: "Buy",
-    value: "buy"
-    }, 
-    {
+    value: "buy",
+    disabled: false
+}, 
+{
     label: "Sell",
-    value: "sell"
+    value: "sell",
+    disabled: false,
 }];

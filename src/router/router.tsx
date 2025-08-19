@@ -1,9 +1,11 @@
 import { Navigate, createHashRouter } from "react-router-dom";
-import { AppProvider } from "../providers/AppProvider";
-import { ROUTES } from "../constants/routes";
-import { BaseLayout } from "../layouts/BaseLayout/BaseLayout";
-import { createElement, lazy } from "react";
-import { withAuth } from "../hoc/withAuth";
+import { withAuth } from "@/hoc/withAuth";
+import { createElement, lazy, Suspense } from "react";
+import { ROUTES } from "@/constants/routes";
+import { BaseLayout } from "@/layouts/BaseLayout/BaseLayout";
+import { AppProvider } from "@/providers/AppProvider";
+import { Loader } from "@/components/Basic/Loader/Loader";
+
 const Home = lazy(() =>
   import("../pages/Home/Home").then((module) => ({ default: module.Home }))
 );
@@ -14,7 +16,9 @@ const Login = lazy(() =>
   import("../pages/Login/Login").then((module) => ({ default: module.Login }))
 );
 const NotFound = lazy(() =>
-  import("../pages/Error/NotFound").then((module) => ({ default: module.NotFound }))
+  import("../pages/Error/NotFound").then((module) => ({
+    default: module.NotFound,
+  }))
 );
 
 export const routes = createHashRouter([
@@ -30,11 +34,19 @@ export const routes = createHashRouter([
           },
           {
             path: ROUTES.TRADE,
-            element: createElement(withAuth(Trade)),
+            element: (
+              <Suspense fallback={<Loader />}>
+                {createElement(withAuth(Trade))}
+              </Suspense>
+            ),
           },
           {
             path: ROUTES.LOGIN,
-            element: <Login />,
+            element: (
+              <Suspense fallback={<Loader />}>
+                <Login />,
+              </Suspense>
+            ),
           },
           {
             path: ROUTES.ERROR_404,

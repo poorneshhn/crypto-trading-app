@@ -1,13 +1,12 @@
 import clsx from "clsx";
-import type { SelectProps, Size } from "./types";
+import type { ISelectProps, Size } from "./types";
 
 const sizeClasses: Record<Size, string> = {
   sm: "text-sm px-3 py-2",
   md: "text-base px-3.5 py-2.5",
-  lg: "text-base px-4 py-3",
 };
 
-export const Select = function Select<T extends string | number = string>({
+export const Select = function Select({
   id,
   name,
   options,
@@ -15,21 +14,22 @@ export const Select = function Select<T extends string | number = string>({
   defaultValue,
   onChange,
   placeholder,
-  helperText,
-  error,
   disabled,
   size = "md",
   fullWidth = true,
   className,
   ref,
+  label,
+  reduce,
   ...rest
-}: SelectProps<T>) {
+}: ISelectProps) {
   const selectId =
     id || name || "select-" + Math.random().toString(36).slice(2);
 
   return (
-    <div className={clsx(fullWidth && "w-full")}>
+    <div className={clsx({ "w-full": fullWidth })}>
       <div className="relative">
+        <label>{label}</label>
         <select
           id={selectId}
           name={name}
@@ -37,21 +37,18 @@ export const Select = function Select<T extends string | number = string>({
           value={value}
           defaultValue={defaultValue}
           disabled={disabled}
-          aria-invalid={!!error}
-          aria-describedby={helperText ? `${selectId}-help` : undefined}
           onChange={(e) => {
-            const raw = e.target.value as unknown as T;
-            onChange?.(raw);
+            const val = e.target.value;
+            onChange?.(val);
           }}
           className={clsx(
             "block w-full appearance-none rounded-xl border shadow-sm",
             "bg-white text-gray-900 dark:bg-gray-800 dark:text-white",
             "border-gray-300 dark:border-gray-700",
-            "placeholder-gray-400",
+            "placeholder-gray-400 cursor-pointer",
             "focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500",
             disabled && "opacity-60 cursor-not-allowed",
             sizeClasses[size],
-            error && "border-red-500 focus:ring-red-500 focus:border-red-500",
             className
           )}
           {...rest}
@@ -61,39 +58,26 @@ export const Select = function Select<T extends string | number = string>({
               {placeholder}
             </option>
           )}
-          {options.map((opt) => (
-            <option
-              key={`${opt.value}`}
-              value={opt.value}
-              disabled={opt.disabled}
-            >
-              {opt.label}
-            </option>
-          ))}
+          {options.map((opt) => {
+            const { label, value, disabled } = reduce(opt);
+            return (
+              <option key={`${value}`} value={value as string} disabled={disabled as boolean}>
+                {label}
+              </option>
+            );
+          })}
         </select>
 
         <span
           className={clsx(
-            "pointer-events-none absolute inset-y-0 right-3 flex items-center",
-            "text-gray-500 dark:text-gray-400"
+            "pointer-events-none absolute inset-y-0 right-3 top-3 flex items-center",
+            "text-gray-500 dark:text-white"
           )}
           aria-hidden="true"
         >
           ▾
         </span>
       </div>
-
-      {(helperText || error) && (
-        <p
-          id={`${selectId}-help`}
-          className={clsx(
-            "mt-1 text-xs",
-            error ? "text-red-600" : "text-gray-500 dark:text-gray-400"
-          )}
-        >
-          {typeof error === "string" ? error : helperText}
-        </p>
-      )}
     </div>
   );
 };

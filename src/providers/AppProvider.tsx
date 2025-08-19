@@ -1,9 +1,9 @@
 import type { FC } from "react";
 import { ErrorBoundary } from "react-error-boundary";
-import type { IAppProviderProps } from "../types/types";
 import { Outlet } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ToastContainer } from "react-toastify";
+import { IAppProviderProps } from "@/types/types";
 
 const queryClient = new QueryClient();
 

@@ -2,7 +2,7 @@ import type { FC } from "react";
 import type { ILoaderProps } from "./types";
 import clsx from "clsx";
 
-const Loader: FC<ILoaderProps> = ({className, width, height}) => {
+export const Loader: FC<ILoaderProps> = ({className, width, height}) => {
   return (
     <div role="status" className={clsx(className, "w-full h-screen flex justify-center items-center")} style={{ width, height }}>
       <svg
@@ -24,4 +24,3 @@ const Loader: FC<ILoaderProps> = ({className, width, height}) => {
   );
 };
 
-export default Loader;

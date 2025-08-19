@@ -1,8 +1,8 @@
 import { Navigate } from "react-router-dom";
-import LoginForm from "../../components/forms/LoginForm/LoginForm";
-import { ROUTES } from "../../constants/routes";
-import { useAuthStore } from "../../store/useAuthStore/store";
 import type { FC } from "react";
+import LoginForm from "@/components/forms/LoginForm/LoginForm";
+import { ROUTES } from "@/constants/routes";
+import { useAuthStore } from "@/store/useAuthStore/store";
 
 export const Login: FC = () => {
   const { isAuthenticated } = useAuthStore();

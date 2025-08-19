@@ -1,8 +1,6 @@
 import type { InputHTMLAttributes } from "react";
 import type { FieldError } from "react-hook-form";
 
-
-
 export interface TInputElementProps extends InputHTMLAttributes<HTMLInputElement> {
   fieldError?: Partial<FieldError>;
   fieldClassName?: string;

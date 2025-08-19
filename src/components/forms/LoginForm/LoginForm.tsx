@@ -1,11 +1,11 @@
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import type { ILoginForm } from "./types";
-import { loginFormSchema } from "./validation";
-import { InputControlled } from "../../Basic/InputControlled";
-import { Button } from "../../Basic/Button";
+import { Button } from "@/components/Basic/Button";
+import { InputControlled } from "@/components/Basic/InputControlled/InputControlled";
+import usePromiseStatus from "@/hooks/usePromiseStatus";
+import { ILoginForm } from "./types";
 import { useLogin } from "./useLogin";
-import usePromiseStatus from "../../../hooks/usePromiseStatus";
+import { loginFormSchema } from "./validation";
 
 const LoginForm = () => {
   const { control, handleSubmit } = useForm<ILoginForm>({
@@ -35,6 +35,7 @@ const LoginForm = () => {
         placeholder="you@example.com"
         theme="dark"
         control={control}
+        autoComplete="email"
       />
       <InputControlled
         label="Password"
@@ -42,6 +43,7 @@ const LoginForm = () => {
         name="password"
         placeholder="••••••••"
         theme="dark"
+        autoComplete="current-password"
         control={control}
       />
       <Button type="submit" disabled={isPending} className="w-full">Login</Button>

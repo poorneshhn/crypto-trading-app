@@ -23,7 +23,7 @@ export const useLogin = () => {
         
         await wait(1000);
 
-        toast.update(id, { render: "Successfully logged in", type: "success", isLoading: false });
+        toast.update(id, { render: "Successfully logged in", type: "success", isLoading: false, autoClose: 2000 });
         
         const redirect = getQueryParam(QUERY_PARAMS.REDIRECT);
 
@@ -34,7 +34,7 @@ export const useLogin = () => {
         navigate(ROUTES.HOME, { replace: true });
          } catch (error) {
             if(error instanceof Error)
-            toast.update(id, { render: error.message, type: "error", isLoading: false });
+            toast.update(id, { render: error.message, type: "error", isLoading: false, autoClose: 2000 });
         }
     
     }, [setUser, setAuthentication, setToken, getQueryParam, navigate]);

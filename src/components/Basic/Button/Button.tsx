@@ -1,6 +1,6 @@
 import type { FC } from "react"
-import type { IButtonElementProps } from "./types";
 import clsx from "clsx";
+import { IButtonElementProps } from "./types";
 
 const buttonVariants = {
   primary:
@@ -14,9 +14,14 @@ const buttonVariants = {
   danger:
     "bg-red-600 text-white hover:bg-red-700 focus:ring-red-500 shadow-sm",
 };
-const Button: FC<IButtonElementProps> = ({className, variant = "primary", disabled, ...rest}) => {
+
+const buttonSize = {
+  sm: "text-sm px-3 py-1.5",
+  md: "text-base px-4 py-2",
+};
+const Button: FC<IButtonElementProps> = ({className, variant = "primary", size = "md", disabled, ...rest}) => {
   return (
-    <button className={clsx(className, {"cursor-not-allowed": disabled}, "cursor-pointer p-2 px-4 rounded-2xl", buttonVariants[variant])} {...rest} />
+    <button className={clsx(className, {"cursor-not-allowed": disabled}, "cursor-pointer p-2 px-4 rounded-2xl", buttonVariants[variant], buttonSize[size])} {...rest} />
   )
 }
 
