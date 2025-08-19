@@ -4,7 +4,7 @@ import { ROUTES } from "../../constants/routes";
 import { useAuthStore } from "../../store/useAuthStore/store";
 import type { FC } from "react";
 
-const Login: FC = () => {
+export const Login: FC = () => {
   const { isAuthenticated } = useAuthStore();
   
   if (isAuthenticated) {
@@ -16,5 +16,3 @@ const Login: FC = () => {
     </div>
   );
 }
-
-export default Login;

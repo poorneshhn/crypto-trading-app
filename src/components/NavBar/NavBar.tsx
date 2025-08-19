@@ -1,6 +1,6 @@
 import type { FC } from "react"
 import { ROUTES } from "../../constants/routes";
-import { CustomLink } from "../Basic/CustomLink";
+import { CustomLink } from "../Basic/CustomLink/CustomLink";
 import { NAVBAR_ROUTES } from "./constants";
 import clsx from "clsx";
 import { isMatchingRoute } from "../../helpers/utils";

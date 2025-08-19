@@ -1,6 +1,7 @@
 {
   "name": "crypto-trading-app",
   "private": true,
+  "homepage": "https://poorneshhn.github.io/crypto-trading-app/",
   "version": "0.0.0",
   "type": "module",
   "scripts": {

@@ -5,16 +5,16 @@ import { BaseLayout } from "../layouts/BaseLayout/BaseLayout";
 import { createElement, lazy } from "react";
 import { withAuth } from "../hoc/withAuth";
 const Home = lazy(() =>
-  import("../pages/Home").then((module) => ({ default: module.Home }))
+  import("../pages/Home/Home").then((module) => ({ default: module.Home }))
 );
 const Trade = lazy(() =>
-  import("../pages/Trade").then((module) => ({ default: module.Trade }))
+  import("../pages/Trade/Trade").then((module) => ({ default: module.Trade }))
 );
 const Login = lazy(() =>
-  import("../pages/Login").then((module) => ({ default: module.Login }))
+  import("../pages/Login/Login").then((module) => ({ default: module.Login }))
 );
 const NotFound = lazy(() =>
-  import("../pages/Error").then((module) => ({ default: module.NotFound }))
+  import("../pages/Error/NotFound").then((module) => ({ default: module.NotFound }))
 );
 
 export const routes = createHashRouter([
