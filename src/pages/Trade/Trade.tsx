@@ -20,5 +20,5 @@ export const Trade: FC = () => {
       }
   return <div className="flex justify-center">
     <CryptoConverter data={data || []}/>
-  </div>;
+  </div>
 };

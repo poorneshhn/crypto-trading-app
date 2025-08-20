@@ -1,5 +1,5 @@
-import { ICoin } from "@/types/types";
-import { option } from "../Basic/Select/types";
+import { type ICoin } from "@/types/types";
+import { type option } from "../Basic/Select/types";
 
 export interface ICryptoConverterProps {
   data: ICoin[];

@@ -1,7 +1,7 @@
 import { useFormContext } from "react-hook-form";
 import { InputControlled } from "../Basic/InputControlled/InputControlled";
-import { FC, useEffect } from "react";
-import { ICurrencyFieldProps } from "./types";
+import { type FC, useEffect } from "react";
+import { type ICurrencyFieldProps } from "./types";
 import { FIELD_NAMES } from "./form";
 import { getCryptoCoinObject } from "./helpers";
 import { useAuthStore } from "@/store/useAuthStore/store";

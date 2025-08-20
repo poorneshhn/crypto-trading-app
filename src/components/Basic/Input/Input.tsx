@@ -14,7 +14,7 @@ const variantStyles = {
       "rounded-xl shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white text-gray-900 placeholder-gray-400",
   },
 };
-const Input: FC<TInputElementProps> = ({
+export const Input: FC<TInputElementProps> = ({
   theme = "light",
   className,
   fieldError,
@@ -51,5 +51,3 @@ const Input: FC<TInputElementProps> = ({
     </>
   );
 };
-
-export default Input;

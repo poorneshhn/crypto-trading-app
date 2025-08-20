@@ -1,4 +1,4 @@
-import { ICoin } from "@/types/types";
+import { type ICoin } from "@/types/types";
 import type { SortDirection, SortKey } from "./types";
 
 export function sortRows(rows: ICoin[], key: SortKey, dir: SortDirection) {

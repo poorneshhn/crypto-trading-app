@@ -1,11 +1,11 @@
-import { FC, useState } from "react";
-import { ICryptoConverter, ICryptoConverterProps } from "./types";
+import { type FC, useState } from "react";
+import type { ICryptoConverter, ICryptoConverterProps } from "./types";
 import { FormProvider, useForm } from "react-hook-form";
 import { CryptoFields } from "./CryptoFields";
 import { CurrencyField } from "./CurrencyField";
 import clsx from "clsx";
 import { SECTIONS } from "./constants";
-import { Button } from "../Basic/Button";
+import { Button } from "../Basic/Button/Button";
 import { FIELD_NAMES } from "./form";
 
 export const CryptoConverter: FC<ICryptoConverterProps> = ({ data }) => {

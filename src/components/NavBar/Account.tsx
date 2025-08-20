@@ -1,7 +1,7 @@
 import { ROUTES } from "@/constants/routes";
 import { isMatchingRoute, getUserNameFromEmail } from "@/helpers/utils";
 import clsx from "clsx";
-import { Button } from "../Basic/Button";
+import { Button } from "../Basic/Button/Button";
 import { CustomLink } from "../Basic/CustomLink/CustomLink";
 import { useLogin } from "../forms/LoginForm/useLogin";
 import { useAuthStore } from "@/store/useAuthStore/store";

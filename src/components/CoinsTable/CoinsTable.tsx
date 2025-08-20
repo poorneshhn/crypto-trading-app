@@ -2,7 +2,7 @@ import { useEffect, useMemo, useState } from "react";
 import type { SortDirection, SortKey } from "./types";
 import { useGetCryptoCoins } from "@/services/cryptoCoins/hooks/useCryptoCoins";
 import { toast } from "react-toastify";
-import { Button } from "../Basic/Button";
+import { Button } from "../Basic/Button/Button";
 import { BuySellCryptoCoins } from "../BuySellCryptoCoins/BuySellCryptoCoins";
 import { Loader } from "../Basic/Loader/Loader";
 import { sortRows } from "./helpers";

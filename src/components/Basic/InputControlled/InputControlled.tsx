@@ -1,7 +1,7 @@
 import type { FocusEvent } from "react"
 import { useController, type FieldValues, type UseControllerProps } from "react-hook-form";
-import { TInputElementProps } from "../Input/types";
-import Input from "../Input/Input";
+import { Input } from "../Input/Input";
+import type { TInputElementProps } from "../Input/types";
 
 export const InputControlled = <T extends FieldValues>(props: UseControllerProps<T> & TInputElementProps) => {
   const { name, control, rules, defaultValue, onBlur, ...restProps } = props;

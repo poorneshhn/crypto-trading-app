@@ -1,6 +1,6 @@
 import type { ButtonHTMLAttributes } from "react";
 
 export interface IButtonElementProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-    variant?: "primary" | "secondary" | "danger" | "outline" | "transparent";
+    variant?: "primary" | "secondary" | "danger";
     size?: "sm" | "md";
 };

@@ -1,5 +1,5 @@
 import { COINS_TABLE_BUY_SELL_OPTIONS } from "@/components/CoinsTable/constants";
-import { ICoin } from "@/types/types";
+import { type ICoin } from "@/types/types";
 import type { FC } from "react";
 
 import { toast } from "react-toastify";

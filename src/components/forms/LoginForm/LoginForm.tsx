@@ -1,9 +1,9 @@
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { Button } from "@/components/Basic/Button";
+import { Button } from "@/components/Basic/Button/Button";
 import { InputControlled } from "@/components/Basic/InputControlled/InputControlled";
 import usePromiseStatus from "@/hooks/usePromiseStatus";
-import { ILoginForm } from "./types";
+import { type ILoginForm } from "./types";
 import { useLogin } from "./useLogin";
 import { loginFormSchema } from "./validation";
 

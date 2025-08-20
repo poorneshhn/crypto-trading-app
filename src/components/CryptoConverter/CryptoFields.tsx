@@ -1,13 +1,13 @@
 import { InputControlled } from "../Basic/InputControlled/InputControlled";
-import { SelectComponentControl } from "../Basic/SelectComponentControl";
+import { SelectComponentControl } from "../Basic/SelectComponentControl/SelectComponentControl";
 import { useFormContext } from "react-hook-form";
-import { FC, useEffect } from "react";
-import { ICryptoFieldsProps } from "./types";
-import { option } from "../Basic/Select/types";
+import { type FC, useEffect } from "react";
+import type { ICryptoFieldsProps } from "./types";
+import type { option } from "../Basic/Select/types";
 import { FIELD_NAMES } from "./form";
 import { useAllCryptoCoins } from "@/services/cryptoCoins/hooks/useAllCryptoCoins";
-import { useAuthStore } from "@/store/useAuthStore/store";
 import { getCryptoCoinObject } from "./helpers";
+import { useAuthStore } from "@/store/useAuthStore/store";
 
 export const CryptoFields: FC<ICryptoFieldsProps> = ({
   options,
