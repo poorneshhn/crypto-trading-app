@@ -41,6 +41,5 @@ export interface IUser {
 }
 export type NullableUser = IUser | null;
 
-
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export type ObjectValues<T extends Record<any, any>> = T[keyof T];
